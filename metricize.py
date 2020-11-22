@@ -43,7 +43,7 @@ def prettify(n):
     if whole_pretty == "0":
         # Use complete decimal
         return whole_pretty + "." + decimal
-    elif int(whole) > 10:
+    elif int(whole) >= 10:
         # Skip the decimal
         return whole_pretty
     elif float("0." + decimal)      == 0:

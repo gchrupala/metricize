@@ -43,7 +43,7 @@ def prettify(n):
     if whole_pretty == "0":
         # Use complete decimal
         return whole_pretty + "." + decimal
-    elif int(whole) > 100:
+    elif int(whole) > 10:
         # Skip the decimal
         return whole_pretty
     elif float("0." + decimal)      == 0:
@@ -51,7 +51,7 @@ def prettify(n):
         return whole_pretty
     else:
         # Round to 2 decimal places
-        return whole_pretty + "." + ("%.2f" % float("0." + decimal))[2:]
+        return whole_pretty + "." + ("%.1f" % float("0." + decimal))[2:]
 
 def grouper(n, iterable, padvalue=None):
     "grouper(3, 'abcdefg', 'x') --> ('a','b','c'), ('d','e','f'), ('g','x','x')"
@@ -96,6 +96,8 @@ units = {
         # temperature
         , "degree Fahrenheit": ("°C", F_C)
         , "degrees Fahrenheit": ("°C", F_C)
+        , "degrees": ("°C", F_C)
+        , "degree":  ("°C", F_C)
         , "°F": ("°C", F_C)
         }
 
